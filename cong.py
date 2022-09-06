@@ -46,7 +46,13 @@ def leEntradas(k,a,b,n):
         a.append(int(input('informe o valor de a{}: '.format(i))))
         b.append(int(input('informe o valor de b{}: '.format(i))))
         n.append(int(input('informe o valor de n{}: '.format(i))))
-        print('\n---- {}ª equação: {}x ≅ {}(mod {})\n'.format(i+1,a[i],b[i],n[i]))
+        g = gcd(a[i],n[i])
+        if g > 1:
+            a[i] = int(a[i]/g)
+            b[i] = int(b[i]/g)
+            n[i] = int(n[i]/g)
+            print('\n---- {}ª equação (simplificada): {}x ≅ {}(mod {})\n'.format(i+1,a[i],b[i],n[i]))
+        else: print('\n---- {}ª equação: {}x ≅ {}(mod {})\n'.format(i+1,a[i],b[i],n[i]))
 
 def isPrime(a):
     if a < 2: return False
