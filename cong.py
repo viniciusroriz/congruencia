@@ -1,4 +1,5 @@
 # Vinícius Roriz - 190020814
+# Python
 
 from math import gcd, prod
 
